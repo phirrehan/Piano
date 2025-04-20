@@ -48,54 +48,6 @@ int main() {
   for (int i = 0; i < n; i++) {
     sound[i].setPitch(std::pow(2, (i - 12) / 12.f));
   }
-  // sf::Sound sound_C1S(buffer);
-  // sound_C1S.setPitch(std::pow(2, -11 / 12.f));
-  // sf::Sound sound_D1(buffer);
-  // sound_D1.setPitch(std::pow(2, -10 / 12.f));
-  // sf::Sound sound_D1S(buffer);
-  // sound_D1S.setPitch(std::pow(2, -9 / 12.f));
-  // sf::Sound sound_E1(buffer);
-  // sound_E1.setPitch(std::pow(2, -8 / 12.f));
-  // sf::Sound sound_F1(buffer);
-  // sound_F1.setPitch(std::pow(2, -7 / 12.f));
-  // sf::Sound sound_F1S(buffer);
-  // sound_F1S.setPitch(std::pow(2, -6 / 12.f));
-  // sf::Sound sound_G1(buffer);
-  // sound_G1.setPitch(std::pow(2, -5 / 12.f));
-  // sf::Sound sound_G1S(buffer);
-  // sound_G1S.setPitch(std::pow(2, -4 / 12.f));
-  // sf::Sound sound_A1(buffer);
-  // sound_A1.setPitch(std::pow(2, -3 / 12.f));
-  // sf::Sound sound_A1S(buffer);
-  // sound_A1S.setPitch(std::pow(2, -2 / 12.f));
-  // sf::Sound sound_B1(buffer);
-  // sound_B1.setPitch(std::pow(2, -1 / 12.f));
-  // sf::Sound sound_C2(buffer);
-  // sf::Sound sound_C2S(buffer);
-  // sound_C2S.setPitch(std::pow(2, 1 / 12.f));
-  // sf::Sound sound_D2(buffer);
-  // sound_D2.setPitch(std::pow(2, 2 / 12.f));
-  // sf::Sound sound_D2S(buffer);
-  // sound_D2S.setPitch(std::pow(2, 3 / 12.f));
-  // sf::Sound sound_E2(buffer);
-  // sound_E2.setPitch(std::pow(2, 4 / 12.f));
-  // sf::Sound sound_F2(buffer);
-  // sound_F2.setPitch(std::pow(2, 5 / 12.f));
-  // sf::Sound sound_F2S(buffer);
-  // sound_F2S.setPitch(std::pow(2, 6 / 12.f));
-  // sf::Sound sound_G2(buffer);
-  // sound_G2.setPitch(std::pow(2, 7 / 12.f));
-  // sf::Sound sound_G2S(buffer);
-  // sound_G2S.setPitch(std::pow(2, 8 / 12.f));
-  // sf::Sound sound_A2(buffer);
-  // sound_A2.setPitch(std::pow(2, 9 / 12.f));
-  // sf::Sound sound_A2S(buffer);
-  // sound_A2S.setPitch(std::pow(2, 10 / 12.f));
-  // sf::Sound sound_B2(buffer);
-  // sound_B2.setPitch(std::pow(2, 11 / 12.f));
-  // sf::Sound sound_C3(buffer);
-  // sound_C3.setPitch(2.f);
-
   // keep window open
   while (window.isOpen()) {
     // handle events
