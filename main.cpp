@@ -3,6 +3,35 @@
 #include <cmath>
 
 sf::SoundBuffer buffer("Sounds/C Note.mp3");
+
+class Sound {
+
+private:
+  std::vector<sf::Sound> soundPool;
+  const int PoolSize = 10;
+  float pitch = 1.f; // 1.f is default pitch
+
+public:
+  Sound() {
+    for (int i = 0; i < PoolSize; i++) {
+      soundPool.emplace_back(buffer);
+    }
+  }
+
+  float getPitch() { return pitch; }
+  void setPitch(float p) { pitch = p; }
+
+  void play() {
+    for (auto &sound : soundPool) {
+      if (sound.getStatus() != sf::Sound::Status::Playing) {
+        sound.setPitch(pitch);
+        sound.play();
+        break;
+      }
+    }
+  }
+};
+
 int main() {
 
   // anti aliasing
@@ -14,55 +43,58 @@ int main() {
                           sf::State::Windowed, settings);
 
   // load sound
-  sf::Sound sound_C1(buffer);
-  sound_C1.setPitch(0.5f);
-  sf::Sound sound_C1S(buffer);
-  sound_C1S.setPitch(std::pow(2, -11 / 12.f));
-  sf::Sound sound_D1(buffer);
-  sound_D1.setPitch(std::pow(2, -10 / 12.f));
-  sf::Sound sound_D1S(buffer);
-  sound_D1S.setPitch(std::pow(2, -9 / 12.f));
-  sf::Sound sound_E1(buffer);
-  sound_E1.setPitch(std::pow(2, -8 / 12.f));
-  sf::Sound sound_F1(buffer);
-  sound_F1.setPitch(std::pow(2, -7 / 12.f));
-  sf::Sound sound_F1S(buffer);
-  sound_F1S.setPitch(std::pow(2, -6 / 12.f));
-  sf::Sound sound_G1(buffer);
-  sound_G1.setPitch(std::pow(2, -5 / 12.f));
-  sf::Sound sound_G1S(buffer);
-  sound_G1S.setPitch(std::pow(2, -4 / 12.f));
-  sf::Sound sound_A1(buffer);
-  sound_A1.setPitch(std::pow(2, -3 / 12.f));
-  sf::Sound sound_A1S(buffer);
-  sound_A1S.setPitch(std::pow(2, -2 / 12.f));
-  sf::Sound sound_B1(buffer);
-  sound_B1.setPitch(std::pow(2, -1 / 12.f));
-  sf::Sound sound_C2(buffer);
-  sf::Sound sound_C2S(buffer);
-  sound_C2S.setPitch(std::pow(2, 1 / 12.f));
-  sf::Sound sound_D2(buffer);
-  sound_D2.setPitch(std::pow(2, 2 / 12.f));
-  sf::Sound sound_D2S(buffer);
-  sound_D2S.setPitch(std::pow(2, 3 / 12.f));
-  sf::Sound sound_E2(buffer);
-  sound_E2.setPitch(std::pow(2, 4 / 12.f));
-  sf::Sound sound_F2(buffer);
-  sound_F2.setPitch(std::pow(2, 5 / 12.f));
-  sf::Sound sound_F2S(buffer);
-  sound_F2S.setPitch(std::pow(2, 6 / 12.f));
-  sf::Sound sound_G2(buffer);
-  sound_G2.setPitch(std::pow(2, 7 / 12.f));
-  sf::Sound sound_G2S(buffer);
-  sound_G2S.setPitch(std::pow(2, 8 / 12.f));
-  sf::Sound sound_A2(buffer);
-  sound_A2.setPitch(std::pow(2, 9 / 12.f));
-  sf::Sound sound_A2S(buffer);
-  sound_A2S.setPitch(std::pow(2, 10 / 12.f));
-  sf::Sound sound_B2(buffer);
-  sound_B2.setPitch(std::pow(2, 11 / 12.f));
-  sf::Sound sound_C3(buffer);
-  sound_C3.setPitch(2.f);
+  Sound sound[26];
+  int n = sizeof(sound) / sizeof(sound[0]);
+  for (int i = 0; i < n; i++) {
+    sound[i].setPitch(std::pow(2, (i - 12) / 12.f));
+  }
+  // sf::Sound sound_C1S(buffer);
+  // sound_C1S.setPitch(std::pow(2, -11 / 12.f));
+  // sf::Sound sound_D1(buffer);
+  // sound_D1.setPitch(std::pow(2, -10 / 12.f));
+  // sf::Sound sound_D1S(buffer);
+  // sound_D1S.setPitch(std::pow(2, -9 / 12.f));
+  // sf::Sound sound_E1(buffer);
+  // sound_E1.setPitch(std::pow(2, -8 / 12.f));
+  // sf::Sound sound_F1(buffer);
+  // sound_F1.setPitch(std::pow(2, -7 / 12.f));
+  // sf::Sound sound_F1S(buffer);
+  // sound_F1S.setPitch(std::pow(2, -6 / 12.f));
+  // sf::Sound sound_G1(buffer);
+  // sound_G1.setPitch(std::pow(2, -5 / 12.f));
+  // sf::Sound sound_G1S(buffer);
+  // sound_G1S.setPitch(std::pow(2, -4 / 12.f));
+  // sf::Sound sound_A1(buffer);
+  // sound_A1.setPitch(std::pow(2, -3 / 12.f));
+  // sf::Sound sound_A1S(buffer);
+  // sound_A1S.setPitch(std::pow(2, -2 / 12.f));
+  // sf::Sound sound_B1(buffer);
+  // sound_B1.setPitch(std::pow(2, -1 / 12.f));
+  // sf::Sound sound_C2(buffer);
+  // sf::Sound sound_C2S(buffer);
+  // sound_C2S.setPitch(std::pow(2, 1 / 12.f));
+  // sf::Sound sound_D2(buffer);
+  // sound_D2.setPitch(std::pow(2, 2 / 12.f));
+  // sf::Sound sound_D2S(buffer);
+  // sound_D2S.setPitch(std::pow(2, 3 / 12.f));
+  // sf::Sound sound_E2(buffer);
+  // sound_E2.setPitch(std::pow(2, 4 / 12.f));
+  // sf::Sound sound_F2(buffer);
+  // sound_F2.setPitch(std::pow(2, 5 / 12.f));
+  // sf::Sound sound_F2S(buffer);
+  // sound_F2S.setPitch(std::pow(2, 6 / 12.f));
+  // sf::Sound sound_G2(buffer);
+  // sound_G2.setPitch(std::pow(2, 7 / 12.f));
+  // sf::Sound sound_G2S(buffer);
+  // sound_G2S.setPitch(std::pow(2, 8 / 12.f));
+  // sf::Sound sound_A2(buffer);
+  // sound_A2.setPitch(std::pow(2, 9 / 12.f));
+  // sf::Sound sound_A2S(buffer);
+  // sound_A2S.setPitch(std::pow(2, 10 / 12.f));
+  // sf::Sound sound_B2(buffer);
+  // sound_B2.setPitch(std::pow(2, 11 / 12.f));
+  // sf::Sound sound_C3(buffer);
+  // sound_C3.setPitch(2.f);
 
   // keep window open
   while (window.isOpen()) {
@@ -77,75 +109,82 @@ int main() {
       } else if (auto key = event->getIf<sf::Event::KeyPressed>()) {
         if (key->scancode == sf::Keyboard::Scancode::A) {
           if (key->shift)
-            sound_C1S.play();
+            sound[1].play(); // C1#
           else
-            sound_C1.play();
+            sound[0].play(); // C1
         }
         if (key->scancode == sf::Keyboard::Scancode::Tab) {
           if (key->shift)
-            sound_D1S.play();
+            sound[3].play(); // D1#
           else
-            sound_D1.play();
+            sound[2].play(); // D1
         }
         if (key->scancode == sf::Keyboard::Scancode::Q) {
-          sound_E1.play();
+          sound[4].play(); // E1
         }
         if (key->scancode == sf::Keyboard::Scancode::W) {
           if (key->shift)
-            sound_F1S.play();
+            sound[6].play(); // F1#
           else
-            sound_F1.play();
+            sound[5].play(); // F1
         }
         if (key->scancode == sf::Keyboard::Scancode::E) {
           if (key->shift)
-            sound_G1S.play();
+            sound[8].play(); // G1#
           else
-            sound_G1.play();
+            sound[7].play(); // G1
         }
         if (key->scancode == sf::Keyboard::Scancode::R) {
           if (key->shift)
-            sound_A1S.play();
+            sound[10].play(); // A1#
           else
-            sound_A1.play();
+            sound[9].play(); // A1
         }
         if (key->scancode == sf::Keyboard::Scancode::T) {
-          sound_B1.play();
+          sound[11].play(); // B1
         }
         if (key->scancode == sf::Keyboard::Scancode::Y) {
           if (key->shift)
-            sound_C2S.play();
+            sound[13].play(); // C2#
           else
-            sound_C2.play();
+            sound[12].play(); // C2
         }
         if (key->scancode == sf::Keyboard::Scancode::U) {
           if (key->shift)
-            sound_D2S.play();
+            sound[15].play(); // D2#
           else
-            sound_D2.play();
+            sound[14].play(); // D2
         }
         if (key->scancode == sf::Keyboard::Scancode::I) {
-          sound_E2.play();
+          sound[16].play(); // E2
         }
         if (key->scancode == sf::Keyboard::Scancode::O) {
           if (key->shift)
-            sound_F2S.play();
+            sound[18].play(); // F2#
           else
-            sound_F2.play();
+            sound[17].play(); // F2
         }
         if (key->scancode == sf::Keyboard::Scancode::P) {
           if (key->shift)
-            sound_G2S.play();
+            sound[20].play(); // G2#
           else
-            sound_G2.play();
+            sound[19].play(); // G2
         }
         if (key->scancode == sf::Keyboard::Scancode::LBracket) {
           if (key->shift)
-            sound_A2S.play();
+            sound[22].play(); // A2#
           else
-            sound_A2.play();
+            sound[21].play(); // A2
         }
         if (key->scancode == sf::Keyboard::Scancode::RBracket) {
-          sound_B2.play();
+          sound[23].play(); // B2
+        }
+
+        if (key->scancode == sf::Keyboard::Scancode::Backslash) {
+          if (key->shift)
+            sound[25].play(); // C3#
+          else
+            sound[24].play(); // C3
         }
       }
     }
