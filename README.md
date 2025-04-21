@@ -2,7 +2,7 @@
 
 This is a simple Piano made using C++ with SFML library. Play the piano by building the code using the Makefile, or using an IDE.
 
-<video src="recording.mkv" width="800" height="600" controls></video>
+https://github.com/user-attachments/assets/c437b10b-00d0-497b-a0c4-4b328d4387f7
 
 ## Installation Guide
 
@@ -14,11 +14,11 @@ You need to install and setup an IDE to compile the source code.
 
 #### IDE
 
-Install an IDE like Visual Studio or Code::Blocks.
+Install an IDE like `Visual Studio`, `Visual Studio Code` or `Code::Blocks`.
 
 #### SFML
 
-Download precompiled SFML 3 SDK from this [link](https://www.sfml-dev.org/download/). Click on the latest and stable version. Extract the archive to a location of your choice. It is recommended to keep the libraries in seperate folders from the IDE's directory.
+Click [here](https://www.sfml-dev.org/download/) to download a precompiled SDK of SFML 3. Click on the latest and stable version. Extract the archive to a location of your choice. It is recommended to keep the library in seperate folder from the IDE's directory.
 
 #### Configuring IDE
 
@@ -64,29 +64,29 @@ This piano uses Equal Temperament as its tuning system. The pitch of adjacent no
 
 The sharp notes (with # in front of them) are the black keys, while the rest are the white keys.
 
-| Note | Control                |
-| ---- | ---------------------- |
-| C1   | CapsLock               |
-| C1#  | Tab                    |
-| D1   | A                      |
-| D1#  | Q                      |
-| E1   | S                      |
-| F1   | D                      |
-| F1#  | E                      |
-| G1   | F                      |
-| G1#  | R                      |
-| A1   | G                      |
-| A1#  | T                      |
-| B1   | H                      |
-| C2   | J                      |
-| C2#  | U                      |
-| D2   | K                      |
-| D2#  | I                      |
-| E2   | L                      |
-| F2   | Semicolon ;            |
-| F2#  | P                      |
-| G2   | Apostrophe '           |
-| G2#  | Left Square Bracket [  |
-| A2   | Backslash \            |
-| A2#  | Right Square Bracket ] |
-| B2   | M                      |
+| Note | Control  |
+| ---- | -------- |
+| C1   | CapsLock |
+| C1#  | Tab      |
+| D1   | A        |
+| D1#  | Q        |
+| E1   | S        |
+| F1   | D        |
+| F1#  | E        |
+| G1   | F        |
+| G1#  | R        |
+| A1   | G        |
+| A1#  | T        |
+| B1   | H        |
+| C2   | J        |
+| C2#  | U        |
+| D2   | K        |
+| D2#  | I        |
+| E2   | L        |
+| F2   | ;        |
+| F2#  | P        |
+| G2   | '        |
+| G2#  | [        |
+| A2   | \        |
+| A2#  | ]        |
+| B2   | M        |
