@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <cmath>
 
-sf::SoundBuffer buffer("Sounds/C Note.mp3");
+sf::SoundBuffer buffer("Sounds/Acoustic.mp3");
 
 class Sound {
 
@@ -74,6 +74,8 @@ int main() {
   for (int i = 0; i < key_n; i++) {
     sound[i].setPitch(std::pow(2, (i - 12) / 12.f));
   }
+
+  window.setKeyRepeatEnabled(false);
   // keep window open
   while (window.isOpen()) {
     // handle events
