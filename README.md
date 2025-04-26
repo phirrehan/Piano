@@ -41,8 +41,8 @@ If SFML 3 is unavailable in your package manager's repository, then refer to the
 Clone this repository using git and compile the source code
 
 ```
-git clone https://github.com/phirrehan/TicTacToe.git
-cd TicTacToe
+git clone https://github.com/phirrehan/Piano.git
+cd Piano
 make
 ```
 
