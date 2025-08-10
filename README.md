@@ -4,31 +4,31 @@ This is a simple Piano made using C++ with SFML library. Play the piano by build
 
 https://github.com/user-attachments/assets/c437b10b-00d0-497b-a0c4-4b328d4387f7
 
-## Installation Guide
+# Installation Guide
 
 SFML is a multi platform library. It can work on many platforms like Windows, MacOS, and Linux. See their respective sections for the installation process.
 
-### Windows
+## Windows
 
 You need to install and setup an IDE to compile the source code.
 
-#### IDE
+### IDE
 
 Install an IDE like `Visual Studio`, `Visual Studio Code` or `Code::Blocks`.
 
-#### SFML
+### SFML
 
 Click [here](https://www.sfml-dev.org/download/) to download a precompiled SDK of SFML 3. Click on the latest and stable version. Extract the archive to a location of your choice. It is recommended to keep the library in seperate folder from the IDE's directory.
 
-#### Configuring IDE
+### Configuring IDE
 
 If you are using `Visual Studio` or `Visual Studio Code`, then see this [page](https://www.sfml-dev.org/tutorials/3.0/getting-started/visual-studio/#installing-sfml) for setting up SFML. Check this [link](https://www.sfml-dev.org/tutorials/3.0/getting-started/code-blocks/) if you're using `Code::Blocks`. In case you do not use any of the aforementioned IDEs, refer to the their respective documentation for setting up SFML 3.
 
-#### Compiling
+### Compiling
 
 Open main.cpp in the IDE of your choice. Compile and Run the program to play the piano.
 
-### MacOS or Linux
+## MacOS or Linux
 
 Install the following packages using homebrew(MacOS) or distribution's package manager(Linux):
 
@@ -52,15 +52,15 @@ Now run the binary file to play the piano
 ./main
 ```
 
-## Sound
+# Sound
 
 The piano uses a sound (placed in Sounds folder) for producing the sound of different notes. By default, this sound is set to `Acoustic.mp3`. It can be changed to `Music Box.mp3` or `Cat.mp3` for different sounds. This can be done by opening `main.cpp` on any text editor or an IDE and modifying the string in constructor of buffer. It is located below the header files(at line 5).
 
-### Brief Music Theory
+## Brief Music Theory
 
 This piano uses Equal Temperament as its tuning system. The pitch of adjacent notes have common ratio of $\sqrt[12]{2}$. The C2 Note of this piano is the original sound. All the other sounds have been derived from that sound by multiplying/dividing the pitch by $\sqrt[12]{2}$.
 
-## Controls
+# Controls
 
 The sharp notes (with # in front of them) are the black keys, while the rest are the white keys.
 
