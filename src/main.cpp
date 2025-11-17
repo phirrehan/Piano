@@ -37,21 +37,20 @@ int main() {
 
   // keyboard keys
   sf::Keyboard::Scan keys[] = {
-    // white keys
-    sf::Keyboard::Scancode::CapsLock, sf::Keyboard::Scancode::A,
-    sf::Keyboard::Scancode::S, sf::Keyboard::Scancode::D,
-    sf::Keyboard::Scancode::F, sf::Keyboard::Scancode::G,
-    sf::Keyboard::Scancode::H, sf::Keyboard::Scancode::J,
-    sf::Keyboard::Scancode::K, sf::Keyboard::Scancode::L,
-    sf::Keyboard::Scancode::Semicolon, sf::Keyboard::Scancode::Apostrophe,
-    sf::Keyboard::Scancode::Backslash, sf::Keyboard::Scancode::M,
-    // black keys
-    sf::Keyboard::Scancode::Tab, sf::Keyboard::Scancode::Q,
-    sf::Keyboard::Scancode::E, sf::Keyboard::Scancode::R,
-    sf::Keyboard::Scancode::T, sf::Keyboard::Scancode::U,
-    sf::Keyboard::Scancode::I, sf::Keyboard::Scancode::P,
-    sf::Keyboard::Scancode::LBracket, sf::Keyboard::Scancode::RBracket
-  };
+      // white keys
+      sf::Keyboard::Scancode::CapsLock, sf::Keyboard::Scancode::A,
+      sf::Keyboard::Scancode::S, sf::Keyboard::Scancode::D,
+      sf::Keyboard::Scancode::F, sf::Keyboard::Scancode::G,
+      sf::Keyboard::Scancode::H, sf::Keyboard::Scancode::J,
+      sf::Keyboard::Scancode::K, sf::Keyboard::Scancode::L,
+      sf::Keyboard::Scancode::Semicolon, sf::Keyboard::Scancode::Apostrophe,
+      sf::Keyboard::Scancode::Backslash, sf::Keyboard::Scancode::M,
+      // black keys
+      sf::Keyboard::Scancode::Tab, sf::Keyboard::Scancode::Q,
+      sf::Keyboard::Scancode::E, sf::Keyboard::Scancode::R,
+      sf::Keyboard::Scancode::T, sf::Keyboard::Scancode::U,
+      sf::Keyboard::Scancode::I, sf::Keyboard::Scancode::P,
+      sf::Keyboard::Scancode::LBracket, sf::Keyboard::Scancode::RBracket};
 
   int key_n = sizeof(keys) / sizeof(keys[0]);
 
@@ -60,7 +59,7 @@ int main() {
   settings.antiAliasingLevel = 4;
 
   // create window
-  sf::RenderWindow window(sf::VideoMode({ 1000, 300 }), "Piano",
+  sf::RenderWindow window(sf::VideoMode({1000, 300}), "Piano",
                           sf::State::Windowed, settings);
 
   // shape of key
@@ -84,7 +83,7 @@ int main() {
         window.close();
       } else if (event->is<sf::Event::Resized>()) {
         sf::View view(
-            sf::FloatRect({ 0.f, 0.f }, sf::Vector2f(window.getSize())));
+            sf::FloatRect({0.f, 0.f}, sf::Vector2f(window.getSize())));
         window.setView(view);
       }
 
@@ -153,8 +152,8 @@ int main() {
     int whiteKeys = 14, blackKeys = 10;
     float key_w = window_w / whiteKeys;
     for (int i = 0; i < whiteKeys; i++) {
-      shape.setSize({ key_w, window_h });
-      shape.setPosition({ i * key_w, 0.f });
+      shape.setSize({key_w, window_h});
+      shape.setPosition({i * key_w, 0.f});
       if (sf::Keyboard::isKeyPressed(keys[i]))
         shape.setFillColor(sf::Color(0, 170, 255));
       else
@@ -162,8 +161,8 @@ int main() {
       window.draw(shape);
       // draw black keys
       if (i % 7 != 2 && i % 7 != 6) {
-        shape.setSize({ key_w / 2, window_h * 0.6f });
-        shape.setPosition({ (i + 0.50f) * key_w, 0.f });
+        shape.setSize({key_w / 2, window_h * 0.6f});
+        shape.setPosition({(i + 0.50f) * key_w, 0.f});
         if (sf::Keyboard::isKeyPressed(keys[getBlackKey(i, whiteKeys)]))
           shape.setFillColor(sf::Color(0, 170, 255));
         else
