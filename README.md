@@ -17,6 +17,7 @@ Download the source code from the github repository or using git:
 
 ```
 git clone https://github.com/phirrehan/Piano.git
+cd Piano
 ```
 
 ## Compile
