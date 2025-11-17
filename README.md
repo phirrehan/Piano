@@ -1,56 +1,39 @@
 # Piano(SFML)
 
-This is a simple Piano made using C++ with SFML library. Play the piano by building the code using the Makefile, or using an IDE.
+This is a simple Piano made using C++ with SFML library. Play the piano by compiling the code with cmake.
 
 https://github.com/user-attachments/assets/c437b10b-00d0-497b-a0c4-4b328d4387f7
 
-# Installation Guide
+# Dependencies
 
-SFML is a multi platform library. It can work on many platforms like Windows, MacOS, and Linux. See their respective sections for the installation process.
+- C++ Compiler 
+- CMake
 
-## Windows
+# Usage Guide
 
-You need to install and setup an IDE to compile the source code.
+## Download Source Code
 
-### IDE
-
-Install an IDE like `Visual Studio`, `Visual Studio Code` or `Code::Blocks`.
-
-### SFML
-
-Click [here](https://www.sfml-dev.org/download/) to download a precompiled SDK of SFML 3. Click on the latest and stable version. Extract the archive to a location of your choice. It is recommended to keep the library in seperate folder from the IDE's directory.
-
-### Configuring IDE
-
-If you are using `Visual Studio` or `Visual Studio Code`, then see this [page](https://www.sfml-dev.org/tutorials/3.0/getting-started/visual-studio/#installing-sfml) for setting up SFML. Check this [link](https://www.sfml-dev.org/tutorials/3.0/getting-started/code-blocks/) if you're using `Code::Blocks`. In case you do not use any of the aforementioned IDEs, refer to the their respective documentation for setting up SFML 3.
-
-### Compiling
-
-Open main.cpp in the IDE of your choice. Compile and Run the program to play the piano.
-
-## MacOS or Linux
-
-Install the following packages using homebrew(MacOS) or distribution's package manager(Linux):
-
-`git gcc sfml make`
-
-> Note: package name for SFML could be different in your package manager's repository
-
-If SFML 3 is unavailable in your package manager's repository, then refer to the SFML [documentation](https://www.sfml-dev.org/tutorials/3.0/getting-started/linux/#introduction).
-
-Clone this repository using git and compile the source code
+Download the source code from the github repository or using git:
 
 ```
 git clone https://github.com/phirrehan/Piano.git
-cd Piano
-make
 ```
 
-Now run the binary file to play the piano
+## Compile
+
+Open root of project in terminal/powershell. Run the following command in root of project:
+> Ensure you have the C++ compiler and cmake in PATH environment variable.
 
 ```
-./main
+mkdir build
+cd build
+cmake ..
+cmake --build .
 ```
+
+## Run Binary
+
+After successful compilation, execute the `Piano` file in `build` directory. Using command line, this can be done with `./Piano` or `.\Piano` for Linux/MacOS and Windows respectively.
 
 # Sound
 
