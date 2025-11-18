@@ -2,8 +2,6 @@
 
 This is a simple Piano made using C++ with SFML library. Play the piano by compiling the code with cmake.
 
-https://github.com/user-attachments/assets/a1186687-8aa7-4a3f-9c92-9588aca956f0
-
 # Dependencies
 
 - C++ Compiler 
