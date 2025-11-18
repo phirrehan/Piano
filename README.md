@@ -1,6 +1,8 @@
 # Piano(SFML)
 
-This is a simple Piano made using C++ with SFML library. Play the piano by compiling the code with cmake.
+This is a simple Piano made using C++ with SFML library. It is cross-platform and will work on Linux, MacOS, and Windows. Here is a sample video of the piano on linux:
+
+https://github.com/user-attachments/assets/7f199422-1647-4945-8caa-ee14895a0163
 
 # Dependencies
 
@@ -25,7 +27,6 @@ sudo apt install \
     libegl1-mesa-dev \
     libfreetype-dev
 ```
-
 # Usage Guide
 
 ## Download Source Code
@@ -49,11 +50,11 @@ cmake --build build
 
 ## Run Binary
 
-After successful compilation, execute the `main` binary in `build/bin/main` directory. Using command line, this can be done with `./build/bin/main` or `.\build\bin\main` for Linux/MacOS and Windows respectively.
+After successful compilation, execute the `main` binary in `build/bin/main` directory. Using command line, this can be done with `./build/bin/main` or `.\build\bin\main` for Linux/MacOS and Windows respectively. 
 
 # Sound
 
-The piano uses a sound (placed in `assets/Sounds` folder) for producing the sound of different notes. By default, this sound is set to `Acoustic.mp3`. It can be changed to `Music Box.mp3` or `Cat.mp3` for different sounds. This can be done by opening `main.cpp` on any text editor or an IDE and modifying the string in constructor of buffer. It is located below the header files(at line 5).
+The piano uses a singular sound (placed in `assets/Sounds`) for producing the sound of different notes. By default, this sound is set to `Acoustic.mp3`. It can be easily changed by editing `buffer`, a global variable in `src/main.cpp`.
 
 ## Brief Music Theory
 
