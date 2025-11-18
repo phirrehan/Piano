@@ -11,7 +11,24 @@ https://github.com/user-attachments/assets/7f199422-1647-4945-8caa-ee14895a0163
 
 ## SFML Dependencies
 
-SFML is built from source. Linux users will need to install these dependencies for successful build. For Ubuntu or Debian based OSes, the dependencies can be installed with the following command:
+
+- freetype
+- x11
+- xrandr
+- xcursor
+- xi
+- udev
+- opengl
+- flac
+- ogg
+- vorbis
+- vorbisenc
+- vorbisfile
+- pthread
+
+> Note: The exact name of packages will vary from distribution to distribution.
+
+These dependencies are for Linux users. For Ubuntu or Debian based OSes, the dependencies can be installed with the following command:
 
 ```
 sudo apt update
@@ -27,6 +44,7 @@ sudo apt install \
     libegl1-mesa-dev \
     libfreetype-dev
 ```
+
 # Usage Guide
 
 ## Download Source Code
@@ -40,8 +58,9 @@ cd Piano
 
 ## Compile
 
-Open root of project in terminal/powershell. Run the following command in root of project:
-> Ensure you have the C++ compiler and cmake in PATH environment variable.
+Open terminal/powershell and run the following command in root of project:
+
+>Note: Ensure you have the C++ compiler and cmake in PATH environment variable.
 
 ```
 cmake -B build
