@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <cmath>
 
-sf::SoundBuffer buffer("Sounds/Acoustic.mp3");
+sf::SoundBuffer buffer("assets/Sounds/Acoustic.mp3");
 
 class Sound {
 
