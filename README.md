@@ -9,6 +9,25 @@ https://github.com/user-attachments/assets/a1186687-8aa7-4a3f-9c92-9588aca956f0
 - C++ Compiler 
 - CMake
 
+## SFML Dependencies
+
+SFML is built from source. Linux users will need to install these dependencies for successful build. For Ubuntu or Debian based OSes, the dependencies can be installed with the following command:
+
+```
+sudo apt update
+sudo apt install \
+    libxrandr-dev \
+    libxcursor-dev \
+    libxi-dev \
+    libudev-dev \
+    libfreetype-dev \
+    libflac-dev \
+    libvorbis-dev \
+    libgl1-mesa-dev \
+    libegl1-mesa-dev \
+    libfreetype-dev
+```
+
 # Usage Guide
 
 ## Download Source Code
@@ -26,19 +45,17 @@ Open root of project in terminal/powershell. Run the following command in root o
 > Ensure you have the C++ compiler and cmake in PATH environment variable.
 
 ```
-mkdir build
-cd build
-cmake ..
-cmake --build .
+cmake -B build
+cmake --build build
 ```
 
 ## Run Binary
 
-After successful compilation, execute the `Piano` file in `build` directory. Using command line, this can be done with `./Piano` or `.\Piano` for Linux/MacOS and Windows respectively.
+After successful compilation, execute the `main` binary in `build/bin/main` directory. Using command line, this can be done with `./build/bin/main` or `.\build\bin\main` for Linux/MacOS and Windows respectively.
 
 # Sound
 
-The piano uses a sound (placed in Sounds folder) for producing the sound of different notes. By default, this sound is set to `Acoustic.mp3`. It can be changed to `Music Box.mp3` or `Cat.mp3` for different sounds. This can be done by opening `main.cpp` on any text editor or an IDE and modifying the string in constructor of buffer. It is located below the header files(at line 5).
+The piano uses a sound (placed in `assets/Sounds` folder) for producing the sound of different notes. By default, this sound is set to `Acoustic.mp3`. It can be changed to `Music Box.mp3` or `Cat.mp3` for different sounds. This can be done by opening `main.cpp` on any text editor or an IDE and modifying the string in constructor of buffer. It is located below the header files(at line 5).
 
 ## Brief Music Theory
 
