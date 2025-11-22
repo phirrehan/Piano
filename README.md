@@ -6,11 +6,12 @@ https://github.com/user-attachments/assets/7f199422-1647-4945-8caa-ee14895a0163
 
 # Dependencies
 
-- C++ Compiler 
+- C++ Compiler
 - CMake
 
 ## SFML Dependencies
 
+These dependencies are only for Linux users.
 
 - freetype
 - x11
@@ -28,7 +29,7 @@ https://github.com/user-attachments/assets/7f199422-1647-4945-8caa-ee14895a0163
 
 > Note: The exact name of packages will vary from distribution to distribution.
 
-These dependencies are for Linux users. For Ubuntu or Debian based OSes, the dependencies can be installed with the following command:
+For Ubuntu or Debian based OSes, the dependencies can be installed with the following command:
 
 ```
 sudo apt update
@@ -60,7 +61,7 @@ cd Piano
 
 Open terminal/powershell and run the following command in root of project:
 
->Note: Ensure you have the C++ compiler and cmake in PATH environment variable.
+> Note: Ensure you have the C++ compiler and cmake in PATH environment variable.
 
 ```
 cmake -B build
@@ -69,7 +70,9 @@ cmake --build build
 
 ## Run Binary
 
-After successful compilation, execute the `main` binary in `build/bin/main` directory. Using command line, this can be done with `./build/bin/main` or `.\build\bin\main` for Linux/MacOS and Windows respectively. 
+After successful compilation, execute the `main` binary in `build/bin/main`. This can be done with `./build/bin/main` on terminal and `.\build\bin\main` on powershell.
+
+Ensure that current working directory is root of project. Otherwise, the binary cannot find `assets` and gives error.
 
 # Sound
 
